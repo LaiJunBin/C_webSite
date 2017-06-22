@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>無標題文件</title>
+</head>
+<script>
+	function sub(){
+	var r1 = form1.r1.value;
+	var r2 = form1.r2.value;
+	alert("流行皮件選購確認：\n\n●真皮皮包："+r1+"\n●真皮短夾："+r2);
+	}
+</script>
+<body background="../images/0402.jpg">
+<form id="form1" name="form1" method="post" action="" onsubmit="sub()">
+  <div align="center">
+    <table border="1" bgcolor="#FF9" style="text-align:center;">
+      <tr>
+        <td width="400" height="100">真皮皮包</td>
+        <td width="400" height="100">真皮短夾</td>
+      </tr>
+      <tr>
+        <td width="400" height="150"><img src="../images/0403.jpg" width="250" height="150" /></td>
+        <td width="400" height="150"><img src="../images/0404.jpg" width="216" height="150" /></td>
+      </tr>
+      <tr>
+        <td width="400" height="100">
+          <label>
+            <input name="r1" type="radio" id="r1_0" value="購買" checked="checked" />
+            購買</label>
+          <label>
+            <input type="radio" name="r1" value="不購買" id="r1_1" />
+            不購買</label>
+          <label>
+            <input type="radio" name="r1" value="考慮中" id="r1_2" />
+            考慮中</label>
+          <br />
+        </td>
+        <td width="400" height="100"><label>
+            <input name="r2" type="radio" id="r1_0" value="購買" />
+            購買</label>
+          <label>
+            <input type="radio" name="r2" value="不購買" id="r1_1" />
+            不購買</label>
+          <label>
+            <input name="r2" type="radio" id="r1_2" value="考慮中" checked="checked" />
+            考慮中</label>
+        <br /></td>
+      </tr>
+    </table>
+  </div>
+  <div align="center">
+    <input type="submit" value="送出" />
+    <input name="重設" type="reset" value="重置" />
+  </div>
+</form>
+</body>
+</html>
