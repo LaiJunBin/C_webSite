@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>網路行銷購物網</title>
+<style type="text/css">
+.main {
+	height: 768px;
+	width: 1024px;
+	margin:0 auto;
+}
+.top {
+	font-family: "標楷體";
+	font-size: 52px;
+	line-height: 120px;
+	color: #FFF;
+	background-image: url(images/0401.jpg);
+	height: 120px;
+	width: 1024px;
+	text-align:center;
+	text-shadow:10px 10px 15px #333;
+}
+.main .top a {
+	color: #FFF;
+	text-decoration: none;
+	display: block;
+}
+.marquee {
+	height: 30px;
+	width: 1024px;
+	font-family: "標楷體";
+	font-size: 19px;
+	line-height: 30px;
+	color: #00F;
+	background-image: url(images/0402.jpg);
+}
+.content {
+	height: 540px;
+	width: 1024px;
+}
+.footer {
+	height: 78px;
+	width: 1024px;
+	background: #660;
+	font-family: "標楷體";
+	line-height: 2;
+	text-align: left;
+	color:#FFF;
+}
+.main .footer a {
+	color: #FFF;
+	text-decoration: none;
+}
+.main .footer a:visited {
+	color:#F99;
+}
+</style>
+</head>
+<audio src="music/0401.mp3" autoplay loop></audio>
+<body leftmargin="0" topmargin="0">
+<div class="main">
+  <div class="top"><a href="index.html">流行精品購物網站</a></div>
+  <div class="marquee">
+    <marquee>
+    大家來購物網！精品商品特價大拍賣！要買要快！
+    </marquee>
+  </div>
+  <div class="content"><iframe src="main.html" name="box" width="1024" height="540" scrolling="auto" frameborder="0"></iframe></div>
+  <div class="footer"><a href="results/message.html" target="box">訪客留言板</a><br />網頁設計及維護：10賴俊賓、最近更新日期：2017/07/02</div>
+</div>
+</body>
+<script>
+	var d = document.getElementsByTagName("body")[0];
+	var value = 0;
+	var lock=false;
+	var type=0;
+	var count = 0;
+	var rand =Math.floor(((Math.random(1)+1)*4));
+	function port(){
+		if (type==0){
+			if (value <=0 && lock==false){
+				value+=1;
+				if(value>=1)
+					lock=true;
+			}else{
+				value-=1;
+				if (value==0)
+					lock=false;	
+		}
+		add(value);
+		}else if (type==1){
+			if (value <=5 && lock==false){
+			value+=1;
+			if(value>=5)
+				lock=true;
+			}else{
+			value-=1;
+			if (value==5)
+				lock=false;	
+			}
+		qq(value);
+		}else if (type==2){
+			if (value <=3 && lock==false){
+			value+=1;
+			if(value>=3)
+				lock=true;
+			}else{
+			value-=1;
+			if (value==3)
+				lock=false;	
+			}
+		bl(value);
+		}else if (type==3){
+			if (value <=5 && lock==false){
+			value+=1;
+			if(value>=5)
+				lock=true;
+			}else{
+			value-=1;
+			if (value==5)
+				lock=false;	
+			}
+		bl1(value);
+		}else if (type==4){
+			if (value <=5 && lock==false){
+			value+=1;
+			if(value>=5)
+				lock=true;
+			}else{
+			value-=1;
+			if (value==5)
+				lock=false;	
+			}
+		bl2(value);
+		}else if (type==5){
+			if (value <=5 && lock==false){
+			value+=1;
+			if(value>=5)
+				lock=true;
+			}else{
+			value-=1;
+			if (value==5)
+				lock=false;	
+			}
+		op(value);
+		}
+		count+=1
+		if (count>=rand){
+			count=0;
+			rand =Math.floor(((Math.random(1)+1)*4));
+			type+=1;
+			if (type==2)
+				rand=1;
+			if (type>=6){
+				type=0;
+				value=0;
+			}
+		}
+		setTimeout(port,100);
+	}
+	function add(value){
+		q=Math.abs(value) %2 ;
+		var style=document.createElement("style");
+		style.append("body{filter:invert("+q+");}");
+		d.append(style);
+	}
+	function qq(value){
+		var q = Math.floor(((Math.random(1)+1)*30));
+		var style=document.createElement("style");
+		style.append("body{filter:hue-rotate("+value*q+"deg);}");
+		d.append(style);
+	}
+	function bl(value){
+		var style=document.createElement("style");
+		style.append("body{filter:blur("+Math.abs(value)+"px);}");
+		d.append(style);
+	}
+	function bl1(value){
+		var style=document.createElement("style");
+		var q = Math.floor(((Math.random(1)+1)*30));
+		style.append("body{filter:opacity(."+Math.abs(value)+" hue-rotate("+value*q+"deg));}");
+		d.append(style);
+	}
+	function bl2(value){
+		var style=document.createElement("style");
+		var q = value % 5;
+		style.append("body{filter:contrast("+Math.abs(q)+");}");
+		d.append(style);
+	}
+	function op(value){
+		var style=document.createElement("style");
+		var q = value % 5;
+		style.append("body{filter:opacity(."+Math.abs(q)+");}");
+		d.append(style);
+	}
+	port();
+</script>
+</html>
