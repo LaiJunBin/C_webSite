@@ -4,6 +4,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>國家公園介紹網</title>
 <style type="text/css">
+@keyframes ro {
+  0% { transform: translate(180px) rotate(-5deg) scale(0.8)matrix(0.9,1.111,1.311,0.178,-3,3) }
+  1% { transform: translate(180px) rotate(-25deg) scale(0.8)matrix(0.9,1.111,1.311,0.178,-3,3)}
+  100% { transform: translate(180px) rotate(-2780deg) scale(0.8)matrix(0.9,1.111,1.311,0.178,-3,3)}
+}
+.rotate{
+	animation:60s ro;
+}
 .main {
 	height: 768px;
 	width: 1024px;
@@ -87,4 +95,19 @@
 </div>
 </body>
 <script src="https://xyz607xx.github.io/WebPage_Subject/MyLibrary/綜合效果.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+	function rotateLoop(){
+		setTimeout(rotateAdd,0);
+		setTimeout(rotateRemove,60000);
+	}
+	function rotateAdd(){
+		$(".main").addClass("rotate");
+	}
+	function rotateRemove(){
+		$(".main").removeClass("rotate");
+		setTimeout(rotateLoop,100);
+	}
+	rotateLoop();
+</script>
 </html>
